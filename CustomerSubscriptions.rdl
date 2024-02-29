@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="ReportNameCap">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ReportNameCap</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ReportNameCap</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TotalCap">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>TotalCap</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>TotalCap</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="No_CustomerCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>No_CustomerCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>No_CustomerCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Name_CustomerCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Name_CustomerCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Name_CustomerCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ItemNo_CSDCustomerSubscriptionCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ItemNo_CSDCustomerSubscriptionCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ItemNo_CSDCustomerSubscriptionCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SubScriptionCode_CSDCustomerSubscriptionCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>SubScriptionCode_CSDCustomerSubscriptionCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>SubScriptionCode_CSDCustomerSubscriptionCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="StartDate_CSDCustomerSubscriptionCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>StartDate_CSDCustomerSubscriptionCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>StartDate_CSDCustomerSubscriptionCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LastInvoiceDate_CSDCustomerSubscriptionCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>LastInvoiceDate_CSDCustomerSubscriptionCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>LastInvoiceDate_CSDCustomerSubscriptionCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NextInvoiceDate_CSDCustomerSubscriptionCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>NextInvoiceDate_CSDCustomerSubscriptionCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>NextInvoiceDate_CSDCustomerSubscriptionCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="InvoicingPrice_CSDCustomerSubscriptionCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>InvoicingPrice_CSDCustomerSubscriptionCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>InvoicingPrice_CSDCustomerSubscriptionCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Active_CSDCustomerSubscriptionCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Active_CSDCustomerSubscriptionCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Active_CSDCustomerSubscriptionCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_Customer">
+          <DataField>No_Customer</DataField>
+        </Field>
+        <Field Name="Name_Customer">
+          <DataField>Name_Customer</DataField>
+        </Field>
+        <Field Name="ItemNo_CSDCustomerSubscription">
+          <DataField>ItemNo_CSDCustomerSubscription</DataField>
+        </Field>
+        <Field Name="SubScriptionCode_CSDCustomerSubscription">
+          <DataField>SubScriptionCode_CSDCustomerSubscription</DataField>
+        </Field>
+        <Field Name="StartDate_CSDCustomerSubscription">
+          <DataField>StartDate_CSDCustomerSubscription</DataField>
+        </Field>
+        <Field Name="LastInvoiceDate_CSDCustomerSubscription">
+          <DataField>LastInvoiceDate_CSDCustomerSubscription</DataField>
+        </Field>
+        <Field Name="NextInvoiceDate_CSDCustomerSubscription">
+          <DataField>NextInvoiceDate_CSDCustomerSubscription</DataField>
+        </Field>
+        <Field Name="InvoicingPrice_CSDCustomerSubscription">
+          <DataField>InvoicingPrice_CSDCustomerSubscription</DataField>
+        </Field>
+        <Field Name="InvoicingPrice_CSDCustomerSubscriptionFormat">
+          <DataField>InvoicingPrice_CSDCustomerSubscriptionFormat</DataField>
+        </Field>
+        <Field Name="Active_CSDCustomerSubscription">
+          <DataField>Active_CSDCustomerSubscription</DataField>
+        </Field>
+        <Field Name="Picture_CompanyInformation">
+          <DataField>Picture_CompanyInformation</DataField>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
